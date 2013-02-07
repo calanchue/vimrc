@@ -1,6 +1,6 @@
 ## requirement
 
-1. vundle
+1. install vundle (vim plugin manager)
 
 ```
 $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
