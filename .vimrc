@@ -1,8 +1,26 @@
-"" originaly created by lifthrasiir's .vimrc file (r21, 2008-11-16)
-"" originaly written by Kang Seonghoon <lifthrasiir@gmail.com>
-"" This file is placed in the public domain.
-"" edited by Hwang JinHwan 
-"" =========================================================
+" for vundle
+set nocompatible
+filetype off
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle
+" required! 
+Plugin 'VundleVim/Vundle.vim'
+
+
+" simplify opening files
+Plugin 'Command-T'
+
+Plugin 'The-NERD-tree'
+nmap <silent> <special> <F1> :NERDTreeToggle<RETURN>
+nmap <silent> <special> <F2> :NERDTreeFind<RETURN>
+
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" end vundle
 
 
 " SYNTAX {{{ -----------------------------------------------
@@ -22,31 +40,6 @@ endf
 " }}} ------------------------------------------------------
 
 
-" vundle option
-" launch vim, run :BundleInstall
-
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" simplify opening files
-Bundle 'Command-T'
-
-Bundle 'The-NERD-tree'
-nmap <silent> <special> <F1> :NERDTreeToggle<RETURN>
-nmap <silent> <special> <F2> :NERDTreeFind<RETURN>
-
-"Bundle 'scrooloose/syntastic'
-
-Bundle 'pathogen.vim'
-
-Bundle 'SuperTab'
-"Bundle 'davidhalter/jedi-vim'
 
 
 filetype plugin indent on
