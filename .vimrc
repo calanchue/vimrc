@@ -14,9 +14,9 @@ Plugin 'Command-T'
 
 Plugin 'The-NERD-tree'
 nmap <silent> <special> <F1> :NERDTreeToggle<RETURN>
-nmap <silent> <special> <F2> :NERDTreeFind<RETURN>
 
 Plugin 'Valloric/YouCompleteMe'
+nnoremap <silent> <C-J> :YcmCompleter GoTo<CR>
 
 call vundle#end()            " required
 filetype plugin indent on    " required
