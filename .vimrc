@@ -1,3 +1,11 @@
+" fix key code for working under screen
+" note : ctrl+v under insert mode reveil actual key code, ex ^[[11
+
+map [11~ <F1>
+map [12~ <F2>
+imap [11~ <F1>
+imap [12~ <F2>
+
 " for vundle
 set nocompatible
 filetype off
@@ -13,10 +21,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Command-T'
 
 Plugin 'The-NERD-tree'
-nmap <silent> <special> <F1> :NERDTreeToggle<RETURN>
+nnoremap <silent> <F1> :NERDTreeToggle<RETURN>
 
 Plugin 'Valloric/YouCompleteMe'
 nnoremap <silent> <C-J> :YcmCompleter GoTo<CR>
+
+Plugin 'majutsushi/tagbar'
+nnoremap <silent> <F2> :TagbarToggle<CR>
 
 call vundle#end()            " required
 filetype plugin indent on    " required
