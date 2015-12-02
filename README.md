@@ -1,13 +1,13 @@
-## requirement
+## usage`
 
-1. install vundle (vim plugin manager)
-
-```
-$ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-```
-
-2. open vim. and type below
+(afte clone repository) vimrc/install.sh
 
 ```
-BundleInstall
+$ install.sh 
+```
+
+
+after update file
+```
+$ ./updateToGit.sh
 ```
