@@ -1,10 +1,11 @@
 " fix key code for working under screen
 " note : ctrl+v under insert mode reveil actual key code, ex ^[[11
+"map [11~ <F1>
+"map [12~ <F2>
+"imap [11~ <F1>
+"imap [12~ <F2>
 
-map [11~ <F1>
-map [12~ <F2>
-imap [11~ <F1>
-imap [12~ <F2>
+let mapleader=","
 
 " for vundle
 set nocompatible
@@ -21,13 +22,15 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Command-T'
 
 Plugin 'The-NERD-tree'
-nnoremap <silent> <F1> :NERDTreeToggle<RETURN>
+nnoremap <silent> <Leader>1 :NERDTreeToggle<RETURN>
 
 Plugin 'Valloric/YouCompleteMe'
-nnoremap <silent> <C-J> :YcmCompleter GoTo<CR>
+nnoremap <silent> <Leader>j :YcmCompleter GoTo<CR>
+let g:ycm_autoclose_preview_window_after_insertion = 0
+nnoremap <silent> <Leader>d :YcmForceCompileAndDiagnostics<CR>
 
 Plugin 'majutsushi/tagbar'
-nnoremap <silent> <F2> :TagbarToggle<CR>
+nnoremap <silent> <Leader>2 :TagbarToggle<CR>
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -64,6 +67,7 @@ set smartindent
 set smarttab
 set expandtab
 set number
+set hlsearch
 
 au FileType python set omnifunc=pythoncomplete$Complete
 let g:SuperTabDefaultCompletionType = "context"
