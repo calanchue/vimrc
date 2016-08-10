@@ -3,6 +3,10 @@ echo copy vimrc
 cp ./.vimrc ~/.vimrc
 echo copy vimrc finished
 
+echo copy vimrc
+cp ./.tmux.conf ~/
+echo copy vimrc
+
 echo vundle install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo vundel install finished
