@@ -5,7 +5,7 @@
 "imap [11~ <F1>
 "imap [12~ <F2>
 
-let mapleader=","
+" let mapleader=","
 
 " for vundle
 set nocompatible
@@ -72,8 +72,14 @@ set hlsearch
 au FileType python set omnifunc=pythoncomplete$Complete
 let g:SuperTabDefaultCompletionType = "context"
 
+" natural move between lines
+:nnoremap j gj
+:nnoremap k gk
+
 " end of configuration
 finish
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 2013-01-24  added vundle configuration
