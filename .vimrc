@@ -68,6 +68,7 @@ set smarttab
 set expandtab
 set number
 set hlsearch
+set mouse=a
 
 au FileType python set omnifunc=pythoncomplete$Complete
 let g:SuperTabDefaultCompletionType = "context"
