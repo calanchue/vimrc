@@ -49,6 +49,15 @@ class Tmux(Task):
             """
         )
 
+class Vim(Task):
+    def install(self):
+        pc("install vim")
+        os.system("git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim")
+        os.system("ln -sf {curr_path}/proto.vimrc ~/.vimrc".format(curr_path=curr_path))
+
+    def clean(self):
+        pc("clean vim")
+
 class All(Task):
     def install(self):
         pc("install all")
