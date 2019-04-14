@@ -31,7 +31,7 @@ class Tmux(Task):
         pc("install tmux")
         os.system(
             r"""
-            cp {curr_path}/proto.tmux.conf ~/.tmux.conf             
+            ln -sf {curr_path}/proto.tmux.conf ~/.tmux.conf             
             git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
             tmux source ~/.tmux.conf
             ~/.tmux/plugins/tpm/scripts/install_plugins.sh
