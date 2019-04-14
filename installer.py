@@ -51,9 +51,11 @@ class Tmux(Task):
 
 class All(Task):
     def install(self):
+        pc("install all")
         Tmux().install()
 
     def clean(self):
+        pc("clean all")
         Tmux().clean()
 
 if __name__ == "__main__":
