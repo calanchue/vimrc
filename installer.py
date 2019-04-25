@@ -38,7 +38,8 @@ class Tmux(Task):
             """.format(curr_path=curr_path))
 
     def copy_conf(self):        
-        os.system("set -o xtrace;cp {curr_path}/proto.tmux.conf ~/.tmux.conf".format(curr_path=curr_path))
+        #os.system("set -o xtrace;cp {curr_path}/proto.tmux.conf ~/.tmux.conf".format(curr_path=curr_path))
+        os.system("set -o xtrace;cp ln -s {curr_path}/proto.tmux.conf ~/.tmux.conf".format(curr_path=curr_path))
 
     def clean(self):
         pc("clean tmux")
