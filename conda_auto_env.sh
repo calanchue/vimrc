@@ -12,7 +12,7 @@
 #
 
 function conda_auto_env() {
-  if [ -e "env.yml" ]; then
+  if [ -e "env.yaml" ]; then
     # echo "environment.yml file found"
     ENV=$(head -n 1 env.yml | cut -f2 -d ' ')
     # Check if you are already in the environment
