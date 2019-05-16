@@ -23,22 +23,31 @@ Plugin 'nelstrom/vim-markdown-preview'
 Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 
 "auto-completion stuff
 "Plugin 'klen/python-mode'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/rope-vim'
-"Plugin 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 ""code folding
 " Plugin 'tmhedberg/SimpylFold'
 
 "Colors!!!
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jnurmine/Zenburn'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'jnurmine/Zenburn'
 
 call vundle#end()
+
+"globa clipboard
+set clipboard=unnamed
+
+"for code completion
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+
+"flake8
+"g:flake8_show_in_gutter = 0
 
 filetype plugin indent on    " enables filetype detection
 let g:SimpylFold_docstring_preview = 1
@@ -46,11 +55,25 @@ let g:SimpylFold_docstring_preview = 1
 "autocomplete
 "let g:ycm_autoclose_preview_window_after_completion=1
 
+"syntastic option
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"E501=too long
+let g:syntastic_python_flake8_args = "--ignore=E501"
+let g:syntastic_quiet_messages = { "type": "style" }
+
 "custom keys
 let mapleader=" "
+map <leader>j  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
 " colorscheme zenburn
 "set guifont=Monaco:h14
 
@@ -81,12 +104,12 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 "------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
+au BufRead,BufNewFile *py,*pyw,*.c,*.h,*.sh set tabstop=4
 
 "spaces for indents
-au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*pyw,*.sh set shiftwidth=4
 au BufRead,BufNewFile *.py,*.pyw set expandtab
-au BufRead,BufNewFile *.py set softtabstop=4
+au BufRead,BufNewFile *.py.*.sh set softtabstop=4
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
@@ -110,6 +133,7 @@ let python_highlight_all=1
 syntax on
 
 " Keep indentation level from previous line:
+set autoindent
 autocmd FileType python set autoindent
 
 " make backspaces more powerfull
